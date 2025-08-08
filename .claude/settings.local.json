@@ -3,7 +3,9 @@
     "allow": [
       "Bash(ls:*)",
       "Bash(mkdir:*)",
-      "Bash(chmod:*)"
+      "Bash(chmod:*)",
+      "Bash(railway logs:*)",
+      "Bash(railway status:*)"
     ],
     "deny": []
   }
