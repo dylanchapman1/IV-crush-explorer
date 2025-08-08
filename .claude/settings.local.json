@@ -10,7 +10,10 @@
       "Bash(cp:*)",
       "Bash(vercel:*)",
       "Bash(mv:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(railway up:*)",
+      "Bash(rm:*)"
     ],
     "deny": []
   }
