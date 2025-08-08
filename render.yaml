@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: earnings-predictor-backend
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: cd backend && python main.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.18
+      - key: PORT
+        value: 8000
+      - key: ENVIRONMENT
+        value: production
+    autoDeploy: true
+    healthCheckPath: /
+    
+  - type: static
+    name: earnings-predictor-frontend
+    plan: free  
+    buildCommand: cd frontend && npm ci && npm run build
+    staticPublishPath: frontend/dist
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+    autoDeploy: true
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
