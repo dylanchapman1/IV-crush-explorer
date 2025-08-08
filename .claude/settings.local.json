@@ -5,7 +5,12 @@
       "Bash(mkdir:*)",
       "Bash(chmod:*)",
       "Bash(railway logs:*)",
-      "Bash(railway status:*)"
+      "Bash(railway status:*)",
+      "Bash(vercel inspect:*)",
+      "Bash(cp:*)",
+      "Bash(vercel:*)",
+      "Bash(mv:*)",
+      "Bash(git add:*)"
     ],
     "deny": []
   }

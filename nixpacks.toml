@@ -1,14 +1,14 @@
 [phases.setup]
-nixPkgs = ["python39", "nodejs-18_x", "npm-9_x"]
+nixPkgs = ["python39", "python39Packages.pip"]
 
 [phases.install]
-cmds = ["pip install -r requirements.txt"]
+cmds = ["python -m pip install -r requirements-minimal.txt"]
 
 [phases.build]
-cmds = ["echo 'Build phase'"]
+cmds = ["mkdir -p backend/data backend/models"]
 
 [start]
-cmd = "cd backend && python main.py"
+cmd = "python start.py"
 
 [variables]
 PYTHON_VERSION = "3.9"
